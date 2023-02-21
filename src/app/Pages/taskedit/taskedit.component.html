@@ -1,0 +1,42 @@
+
+<div class="card">
+   
+    <div class="card-body">
+      <h5 class="card-title">Editar Tarea</h5>
+      <form action="">
+        <div class="form-group">
+            <label for="" style="text-align: left;">Tarea:</label>
+           <textarea  [(ngModel)]="modelTask.tarea" name="tarea" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <select [(ngModel)]="modelTask.asignado" name="asignado" class="form-control">
+                <option *ngFor="let people of peoples" [value]="people.nombres"   > {{people.nombres}} </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="" style="text-align: left;">Fecha Ejecución:</label>
+            <input  [(ngModel)]="modelTask.fechaejecucion" name="fechaejecucion"  type="date" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="" style="text-align: left;">Hora Ejecucion:</label>
+            <input  [(ngModel)]="modelTask.horaejecucion" name="horaejecucion"  type="time" class="form-control">
+        </div>
+        <div class="form-group">
+              <label for="" style="text-align: left;">Estado:</label>
+            <select  [(ngModel)]="modelTask.estado" name="estado"  class="form-control">
+                <option>Pendiente</option>
+                <option>Realizada</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label for="" style="text-align: left;">Dias Retraso:</label>
+            <input disabled="" [(ngModel)]="diasAtraso" name="diasAtraso"  type="number" class="form-control">
+        </div>
+        
+        <button (click)="actualizarTarea(modelTask)" class="btn btn-success" style="width: 100%;" >Editar</button>
+      </form>
+    </div>
+  </div>
+
+

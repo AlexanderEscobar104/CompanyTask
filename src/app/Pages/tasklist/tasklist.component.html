@@ -1,0 +1,40 @@
+
+<div class="card">
+   
+    <div class="card-body">
+      <h5 class="card-title">Listado De Tareas</h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tarea</th>
+            <th scope="col">Asignado</th>
+            <th scope="col">Fecha Ejecución</th>
+            <th scope="col">Hora Ejecución</th>
+            <th scope="col">Fecha Creacion</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks ">
+            <th scope="row">{{task.id}}</th>
+            <td>{{task.tarea}}</td>
+            <td>{{task.asignado}}</td>
+            <td>{{task.fechaejecucion}}</td>
+            <td>{{task.horaejecucion}}</td>
+            <td>{{task.fechacreacion}}</td>
+            <td>{{task.estado}}</td>
+            <td> <button (click)="editarTarea(task)" class="btn btn-info" >Editar</button></td>
+            <td><button (click)="eliminarTarea(task)" class="btn btn-danger" >Eliminar</button></td>
+           
+      
+          </tr>
+        </tbody>
+      </table>
+
+        <button (click)="nuevaTarea()" class="btn btn-info" style="width: 100%;" >Nuevo</button>
+
+    </div>
+  </div>
+
+
